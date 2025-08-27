@@ -1,5 +1,3 @@
-// const { createElement } = require("react");
-
 
 function getId(id){
     return document.getElementById(id);
@@ -7,11 +5,11 @@ function getId(id){
 
 //  //service-section
 getId("service-section").addEventListener("click", function (e) {
-    // calling
+    // calling number
     if (e.target.className.includes("btn-call")) {
         const coin =  getId("coin-box").innerText
         if (coin <= 0) {
-            alert("You haven't enough coin......");
+            alert("❌ You don't have enough coin. You need at least 20 coins to make a call.");
             return;
         }
         const callBtn = e.target;
@@ -48,8 +46,21 @@ getId("service-section").addEventListener("click", function (e) {
         navigator.clipboard.writeText(serviceContact);
         const copyCountNumber = getId("copyCount").innerText;
         const count = Number(copyCountNumber) + 1;
+        alert(`Number Copied: ${serviceContact}`)
         getId("copyCount").innerText = count;
+        
+    }
 
+    //heart
+    if (e.target.className.includes("heart-btn")) {
+        const heartCount = getId("heart-count").innerText;
+        const newHeartCount = Number(heartCount) + 1;
+        getId("heart-count").innerText = newHeartCount;
     }
     
+})
+
+// clear history
+getId("clearHistory").addEventListener("click", function () {
+    getId("call-history-list").innerHTML = '';
 })
