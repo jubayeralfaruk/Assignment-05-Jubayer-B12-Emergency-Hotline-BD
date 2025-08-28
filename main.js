@@ -22,7 +22,7 @@ getId("service-section").addEventListener("click", function (e) {
         const historyDiv = document.createElement("div");
 
         historyDiv.innerHTML = `
-            <div class="bg-[#FAFAFA] flex justify-between items-center gap-4 p-4">
+            <div class="bg-[#FAFAFA] flex justify-between items-center gap-4 p-4 rounded-lg">
                 <div class="">
                     <h3 class="font-semibold text-[18px] text-[#111111]">${serviceName}</h3>
                     <p class="text-[18px] text-[#5C5C5C]">${serviceContact}</p>
