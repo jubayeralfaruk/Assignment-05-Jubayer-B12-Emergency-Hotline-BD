@@ -13,8 +13,9 @@ getId("service-section").addEventListener("click", function (e) {
             return;
         }
         const callBtn = e.target;
-        const serviceName = callBtn.parentElement.parentElement.children[1].children[0].innerText 
-        const serviceContact = callBtn.parentElement.parentElement.children[2].children[0].innerText 
+        const serviceName = callBtn.parentElement.parentElement.parentElement.children[1].children[0].innerText 
+        const serviceContact = callBtn.parentElement.parentElement.children[0].children[0].innerText
+         
         alert(`📞Calling ${serviceName} ${serviceContact}`);
         const callCoinSpan = Number(coin) - 20;
         getId("coin-box").innerText = callCoinSpan;
@@ -41,7 +42,7 @@ getId("service-section").addEventListener("click", function (e) {
     // // copy number
     if (e.target.className.includes("btn-copy")) {
         const copyBtn = e.target
-        const serviceContact = copyBtn.parentElement.parentElement.children[2].children[0].innerText;
+        const serviceContact = copyBtn.parentElement.parentElement.children[0].children[0].innerText;
 
         navigator.clipboard.writeText(serviceContact);
         const copyCountNumber = getId("copyCount").innerText;
